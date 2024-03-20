@@ -11,8 +11,8 @@ This is a minimal example of synthesizing [vhdl](https://en.wikipedia.org/wiki/V
 These programs are usually available in your favorite package manager.
 
 ### Flashing the Code
-
 Clone the repo and run
 ```bash
 make flash
 ```
+After uploading the code, two leds should be on. When pressing the button, the lit leds should shift left.
