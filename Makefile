@@ -28,4 +28,7 @@ build/$(main)_packed.fs: build/pnr_$(main).json
 	gowin_pack -d GW1N-9C -o build/$(main)_packed.fs build/pnr_$(main).json
 
 flash: build/$(main)_packed.fs
+
+	# NOTE: This does not flash the program permanently. It will be lost after power off.
+	# If you want to flash the program permanently, you need to add the '-f' flag
 	sudo openFPGALoader -b tangnano9k build/$(main)_packed.fs
