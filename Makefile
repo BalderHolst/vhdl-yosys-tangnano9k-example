@@ -11,11 +11,10 @@ main=leds
 
 make: build/$(main)_packed.fs
 
-build/:
-	mkdir build
+build/$(main).json: *.vhdl
+	ghdl -a $<
 
-build/$(main).json: build/
-	ghdl -a *.vhdl
+	@[[ -d "build" ]] || mkdir build
 
 	yosys $(ghdl-module) -p 'ghdl $(main); synth_gowin -json build/$(main).json'
 
