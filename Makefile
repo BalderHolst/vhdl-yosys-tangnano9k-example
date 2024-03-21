@@ -18,7 +18,7 @@ work-obj%.cf: *.vhdl
 	ghdl -a $(sources)
 	ghdl -e $(main)
 
-build/$(main).json:
+build/$(main).json: *.vhdl
 
 	ghdl -a $(sources)
 
